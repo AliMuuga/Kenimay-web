@@ -17,11 +17,23 @@ a { text-decoration: none; color: inherit; }
 .btn:hover { background: #045d0a; transform: scale(1.05); }
 
 /* ===== Header ===== */
-.header { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; background: #fff; border-bottom: 2px solid rgb(1,127,10); position: sticky; top:0; z-index:1000; }
+.header { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; background: #fff; border-bottom: 2px solid rgb(1,127,10); position: sticky; top:0; z-index:1000; box-sizing: border-box; }
 .header .logo img { height: 60px; }
 .navbar ul { list-style:none; display:flex; gap:20px; }
 .navbar a { font-weight:600; transition: color 0.3s ease; }
 .navbar a:hover { color: rgb(1,127,10); }
+
+/* ===== Hero Section ===== */
+.hero {
+  background: url("Assets/hero-bg.jpg") center/cover no-repeat;
+  color: white; text-align: center; padding: 100px 20px; position: relative;
+}
+.hero::after {
+  content:""; position:absolute; inset:0; background: rgba(0,0,0,0.6);
+}
+.hero-content { position: relative; z-index:1; animation: fadeIn 2s ease; }
+.hero h1 { font-size:2.5rem; }
+.hero p { font-size:1.2rem; margin-bottom:20px; }
 
 @media(max-width: 768px) {
   .hero {
@@ -45,6 +57,7 @@ a { text-decoration: none; color: inherit; }
     font-size: 0.9rem;
   }
 }
+
 
 /* ===== About Section ===== */
 .about { padding: 60px 20px; max-width:1000px; margin:auto; text-align:center; }
@@ -201,7 +214,6 @@ a { text-decoration: none; color: inherit; }
 @media(max-width:768px){
   .header{flex-direction:row; text-align:left;} 
   .navbar ul{flex-direction:row; margin-top:0;}  
-  .contact-container{flex-direction:row;}        
 }
 html{scroll-behavior:smooth;}
 
@@ -227,6 +239,10 @@ html{scroll-behavior:smooth;}
   .contact {
     padding: 40px 15px;
     text-align: center;
+    background: #fff; /* Ensure contact section background is white */
+    margin-top: 0;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   }
 
   .contact-container {
