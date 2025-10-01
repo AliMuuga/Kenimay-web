@@ -361,19 +361,3 @@ html{scroll-behavior:smooth;}
   }
 }
 
-/* Shrink header default transition */
-.header {
-  transition: all 0.3s ease;
-}
-
-/* Smaller header when scrolled */
-.header.shrink {
-  padding: 8px 25px;
-}
-.header.shrink .logo img {
-  height: 45px; /* shrink logo */
-}
-.header.shrink .btn {
-  padding: 6px 15px;
-  font-size: 0.9rem;
-}
